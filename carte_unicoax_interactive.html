@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b37d17deb2234c6f52406de76cb95498 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            top: 10px; right: 10px; width: 300px; height: auto; 
+            background-color: white; border:2px solid grey; z-index:9999; 
+            font-size:14px; padding: 10px">
+<h4>🏢 Entreprises</h4>
+
+    <p><span style="color: #8B4513; font-size: 20px;">●</span> 
+    <b>Audio Video</b>: 15 villes</p>
+    
+    <p><span style="color: #FFD700; font-size: 20px;">●</span> 
+    <b>Hoppen</b>: 10 villes</p>
+    
+    <p><span style="color: #000000; font-size: 20px;">●</span> 
+    <b>Hotel Care</b>: 9 villes</p>
+    
+    <p><span style="color: #FF1493; font-size: 20px;">●</span> 
+    <b>LTH</b>: 5 villes</p>
+    
+    <p><span style="color: #228B22; font-size: 20px;">●</span> 
+    <b>ADC</b>: 3 villes</p>
+    
+    <p><span style="color: #1E90FF; font-size: 20px;">●</span> 
+    <b>AGSCOM</b>: 3 villes</p>
+    
+    <p><span style="color: #40E0D0; font-size: 20px;">●</span> 
+    <b>Siecom</b>: 3 villes</p>
+    
+    <p><span style="color: #DC143C; font-size: 20px;">●</span> 
+    <b>ACTIV'PROTECT</b>: 1 villes</p>
+    
+    <p><span style="color: #8A2BE2; font-size: 20px;">●</span> 
+    <b>Alliance tech</b>: 1 villes</p>
+    
+    <p><span style="color: #FF8C00; font-size: 20px;">●</span> 
+    <b>ATEA-IT</b>: 1 villes</p>
+    
+    <p><span style="color: #A9A9A9; font-size: 20px;">●</span> 
+    <b>Humelab Hospitality</b>: 1 villes</p>
+    
+    <p><span style="color: #00FFFF; font-size: 20px;">●</span> 
+    <b>TV Beaujolaise</b>: 1 villes</p>
+    
+    <p><span style="color: #DAA520; font-size: 20px;">●</span> 
+    <b>VMP</b>: 1 villes</p>
+    
+<hr>
+<p><b>Total:</b> 54 villes</p></div>
+    
+            <div class="folium-map" id="map_b37d17deb2234c6f52406de76cb95498" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b37d17deb2234c6f52406de76cb95498 = L.map(
+                "map_b37d17deb2234c6f52406de76cb95498",
+                {
+                    center: [46.603354, 1.888334],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fd9bcb4a5517a8b32b9e0a00b6cdc23b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fd9bcb4a5517a8b32b9e0a00b6cdc23b.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_efc02cd275b41d9585523197e33aac1a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_6da92ee037a9195b95324270da22c7da = L.circleMarker(
+                [44.56, 2.2539],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#DC143C", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_efc02cd275b41d9585523197e33aac1a);
+        
+    
+        var popup_d99bc3c514edfa6c2e5edb92d7549366 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_26026be4f78c5167232c768246be08d8 = $(`<div id="html_26026be4f78c5167232c768246be08d8" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #DC143C; margin: 0;">Decazeville</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> ACTIV'PROTECT<br>                 <b>Coordonnées:</b><br>                 Lat: 44.5600<br>                 Lon: 2.2539             </div>             </div>`)[0];
+                popup_d99bc3c514edfa6c2e5edb92d7549366.setContent(html_26026be4f78c5167232c768246be08d8);
+            
+        
+
+        circle_marker_6da92ee037a9195b95324270da22c7da.bindPopup(popup_d99bc3c514edfa6c2e5edb92d7549366)
+        ;
+
+        
+    
+    
+            circle_marker_6da92ee037a9195b95324270da22c7da.bindTooltip(
+                `<div>
+                     Decazeville (ACTIV'PROTECT)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_efc02cd275b41d9585523197e33aac1a.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_bad9da81c5e25607c654d39e698d2a2b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_07f82ab58c5dff7a8997b31f6e86a6f4 = L.circleMarker(
+                [45.8336, 1.2611],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_bad9da81c5e25607c654d39e698d2a2b);
+        
+    
+        var popup_5c8f452e26733a4f79e995e80722a55e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bb82ef7f5f68dda99a68bff488f965cf = $(`<div id="html_bb82ef7f5f68dda99a68bff488f965cf" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #228B22; margin: 0;">Limoges</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> ADC<br>                 <b>Coordonnées:</b><br>                 Lat: 45.8336<br>                 Lon: 1.2611             </div>             </div>`)[0];
+                popup_5c8f452e26733a4f79e995e80722a55e.setContent(html_bb82ef7f5f68dda99a68bff488f965cf);
+            
+        
+
+        circle_marker_07f82ab58c5dff7a8997b31f6e86a6f4.bindPopup(popup_5c8f452e26733a4f79e995e80722a55e)
+        ;
+
+        
+    
+    
+            circle_marker_07f82ab58c5dff7a8997b31f6e86a6f4.bindTooltip(
+                `<div>
+                     Limoges (ADC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c3903f73bb6e0c382744c2eb1e1b88b = L.circleMarker(
+                [43.71, 7.119],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_bad9da81c5e25607c654d39e698d2a2b);
+        
+    
+        var popup_c85b291a319fd45b670a54476393287f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_252ba24544e36aa8e742d10dc54f4ad7 = $(`<div id="html_252ba24544e36aa8e742d10dc54f4ad7" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #228B22; margin: 0;">Vence</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> ADC<br>                 <b>Coordonnées:</b><br>                 Lat: 43.7100<br>                 Lon: 7.1190             </div>             </div>`)[0];
+                popup_c85b291a319fd45b670a54476393287f.setContent(html_252ba24544e36aa8e742d10dc54f4ad7);
+            
+        
+
+        circle_marker_8c3903f73bb6e0c382744c2eb1e1b88b.bindPopup(popup_c85b291a319fd45b670a54476393287f)
+        ;
+
+        
+    
+    
+            circle_marker_8c3903f73bb6e0c382744c2eb1e1b88b.bindTooltip(
+                `<div>
+                     Vence (ADC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae09e5239eb09ec851b7e2cced803ecc = L.circleMarker(
+                [43.6047, 1.4442],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_bad9da81c5e25607c654d39e698d2a2b);
+        
+    
+        var popup_d73aaf7876e256667af92e10ea6ff963 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_61344d22ced13719b835e815f1339e66 = $(`<div id="html_61344d22ced13719b835e815f1339e66" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #228B22; margin: 0;">Toulouse</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> ADC<br>                 <b>Coordonnées:</b><br>                 Lat: 43.6047<br>                 Lon: 1.4442             </div>             </div>`)[0];
+                popup_d73aaf7876e256667af92e10ea6ff963.setContent(html_61344d22ced13719b835e815f1339e66);
+            
+        
+
+        circle_marker_ae09e5239eb09ec851b7e2cced803ecc.bindPopup(popup_d73aaf7876e256667af92e10ea6ff963)
+        ;
+
+        
+    
+    
+            circle_marker_ae09e5239eb09ec851b7e2cced803ecc.bindTooltip(
+                `<div>
+                     Toulouse (ADC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_bad9da81c5e25607c654d39e698d2a2b.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_5849ce18bffb8f62bac6bb398f4b6ed5 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_1b1bf46ff0636acf0124e092bade9de3 = L.circleMarker(
+                [48.2973, 4.0744],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E90FF", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5849ce18bffb8f62bac6bb398f4b6ed5);
+        
+    
+        var popup_7c747fb02090154c502d9f4150cc3ec0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8d31d28269b612cba1084b9100d897c8 = $(`<div id="html_8d31d28269b612cba1084b9100d897c8" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #1E90FF; margin: 0;">Troyes</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> AGSCOM<br>                 <b>Coordonnées:</b><br>                 Lat: 48.2973<br>                 Lon: 4.0744             </div>             </div>`)[0];
+                popup_7c747fb02090154c502d9f4150cc3ec0.setContent(html_8d31d28269b612cba1084b9100d897c8);
+            
+        
+
+        circle_marker_1b1bf46ff0636acf0124e092bade9de3.bindPopup(popup_7c747fb02090154c502d9f4150cc3ec0)
+        ;
+
+        
+    
+    
+            circle_marker_1b1bf46ff0636acf0124e092bade9de3.bindTooltip(
+                `<div>
+                     Troyes (AGSCOM)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de28b1922b43dc7b6c0843c1c575582d = L.circleMarker(
+                [45.5667, 5.3833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E90FF", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5849ce18bffb8f62bac6bb398f4b6ed5);
+        
+    
+        var popup_65e568f15600e75f6db5d01732d1d1b9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_51df95cddea729fecffe63a6744b69b9 = $(`<div id="html_51df95cddea729fecffe63a6744b69b9" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #1E90FF; margin: 0;">Bourgoin</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> AGSCOM<br>                 <b>Coordonnées:</b><br>                 Lat: 45.5667<br>                 Lon: 5.3833             </div>             </div>`)[0];
+                popup_65e568f15600e75f6db5d01732d1d1b9.setContent(html_51df95cddea729fecffe63a6744b69b9);
+            
+        
+
+        circle_marker_de28b1922b43dc7b6c0843c1c575582d.bindPopup(popup_65e568f15600e75f6db5d01732d1d1b9)
+        ;
+
+        
+    
+    
+            circle_marker_de28b1922b43dc7b6c0843c1c575582d.bindTooltip(
+                `<div>
+                     Bourgoin (AGSCOM)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be7f2d3e5630d4a4e8f8f9eb21ff2f5b = L.circleMarker(
+                [45.2581, 5.5508],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E90FF", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5849ce18bffb8f62bac6bb398f4b6ed5);
+        
+    
+        var popup_ad2e5d7d30ea1a785ef7ddc1a1c6e092 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_64a834d2a1d252199c5e6ae98d01a125 = $(`<div id="html_64a834d2a1d252199c5e6ae98d01a125" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #1E90FF; margin: 0;">Tullins</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> AGSCOM<br>                 <b>Coordonnées:</b><br>                 Lat: 45.2581<br>                 Lon: 5.5508             </div>             </div>`)[0];
+                popup_ad2e5d7d30ea1a785ef7ddc1a1c6e092.setContent(html_64a834d2a1d252199c5e6ae98d01a125);
+            
+        
+
+        circle_marker_be7f2d3e5630d4a4e8f8f9eb21ff2f5b.bindPopup(popup_ad2e5d7d30ea1a785ef7ddc1a1c6e092)
+        ;
+
+        
+    
+    
+            circle_marker_be7f2d3e5630d4a4e8f8f9eb21ff2f5b.bindTooltip(
+                `<div>
+                     Tullins (AGSCOM)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_5849ce18bffb8f62bac6bb398f4b6ed5.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_a583019859fb67e1df29e9ae6d7ddd05 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_14d0e953a7b8722479c370c7ed8a7285 = L.circleMarker(
+                [46.3063, 4.8281],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a583019859fb67e1df29e9ae6d7ddd05);
+        
+    
+        var popup_601ed36cf6e042ffac17e9f836e4ebdd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c03976c26b80af6d8bbe0515963fa12c = $(`<div id="html_c03976c26b80af6d8bbe0515963fa12c" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8A2BE2; margin: 0;">Macon</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Alliance tech<br>                 <b>Coordonnées:</b><br>                 Lat: 46.3063<br>                 Lon: 4.8281             </div>             </div>`)[0];
+                popup_601ed36cf6e042ffac17e9f836e4ebdd.setContent(html_c03976c26b80af6d8bbe0515963fa12c);
+            
+        
+
+        circle_marker_14d0e953a7b8722479c370c7ed8a7285.bindPopup(popup_601ed36cf6e042ffac17e9f836e4ebdd)
+        ;
+
+        
+    
+    
+            circle_marker_14d0e953a7b8722479c370c7ed8a7285.bindTooltip(
+                `<div>
+                     Macon (Alliance tech)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_a583019859fb67e1df29e9ae6d7ddd05.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_0b47ad32d2ae63917b451161483b82c9 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_2c23f663a7994394bc45db02ac13edce = L.circleMarker(
+                [45.764, 4.8357],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0b47ad32d2ae63917b451161483b82c9);
+        
+    
+        var popup_9e843d129b6b5d5b882eb35f8acc6735 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_62170324d4428bf92439b69b0a51e246 = $(`<div id="html_62170324d4428bf92439b69b0a51e246" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FF8C00; margin: 0;">Lyon</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> ATEA-IT<br>                 <b>Coordonnées:</b><br>                 Lat: 45.7640<br>                 Lon: 4.8357             </div>             </div>`)[0];
+                popup_9e843d129b6b5d5b882eb35f8acc6735.setContent(html_62170324d4428bf92439b69b0a51e246);
+            
+        
+
+        circle_marker_2c23f663a7994394bc45db02ac13edce.bindPopup(popup_9e843d129b6b5d5b882eb35f8acc6735)
+        ;
+
+        
+    
+    
+            circle_marker_2c23f663a7994394bc45db02ac13edce.bindTooltip(
+                `<div>
+                     Lyon (ATEA-IT)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_0b47ad32d2ae63917b451161483b82c9.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_18403d15c774ac126f90ecb485e62591 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_d222d07772619d648b48ae886ed1484a = L.circleMarker(
+                [43.1044, 5.8794],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_fe5e2ab03d34e8103693b9477ec7956e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cb87db0e13810b0d05d6504c7c3c57a8 = $(`<div id="html_cb87db0e13810b0d05d6504c7c3c57a8" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">La Seyne s/Mer</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 43.1044<br>                 Lon: 5.8794             </div>             </div>`)[0];
+                popup_fe5e2ab03d34e8103693b9477ec7956e.setContent(html_cb87db0e13810b0d05d6504c7c3c57a8);
+            
+        
+
+        circle_marker_d222d07772619d648b48ae886ed1484a.bindPopup(popup_fe5e2ab03d34e8103693b9477ec7956e)
+        ;
+
+        
+    
+    
+            circle_marker_d222d07772619d648b48ae886ed1484a.bindTooltip(
+                `<div>
+                     La Seyne s/Mer (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49c46c00fce251d54b80358639143b1b = L.circleMarker(
+                [49.0247, 1.1508],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_7553ea515cbf1d97cc918deacfdfc431 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f8503e685bcf9ab13cee6c3965943e43 = $(`<div id="html_f8503e685bcf9ab13cee6c3965943e43" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Evreux</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 49.0247<br>                 Lon: 1.1508             </div>             </div>`)[0];
+                popup_7553ea515cbf1d97cc918deacfdfc431.setContent(html_f8503e685bcf9ab13cee6c3965943e43);
+            
+        
+
+        circle_marker_49c46c00fce251d54b80358639143b1b.bindPopup(popup_7553ea515cbf1d97cc918deacfdfc431)
+        ;
+
+        
+    
+    
+            circle_marker_49c46c00fce251d54b80358639143b1b.bindTooltip(
+                `<div>
+                     Evreux (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a805ba075dfad9ac79e074839ffceb16 = L.circleMarker(
+                [47.2184, -1.5536],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_92210f4fca6facf2015a1bace72d868d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_20092eac4ff0901cfd7cfdd2938f92be = $(`<div id="html_20092eac4ff0901cfd7cfdd2938f92be" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Nantes</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 47.2184<br>                 Lon: -1.5536             </div>             </div>`)[0];
+                popup_92210f4fca6facf2015a1bace72d868d.setContent(html_20092eac4ff0901cfd7cfdd2938f92be);
+            
+        
+
+        circle_marker_a805ba075dfad9ac79e074839ffceb16.bindPopup(popup_92210f4fca6facf2015a1bace72d868d)
+        ;
+
+        
+    
+    
+            circle_marker_a805ba075dfad9ac79e074839ffceb16.bindTooltip(
+                `<div>
+                     Nantes (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12ffc7d03c18cf6f630a95e9b18ad314 = L.circleMarker(
+                [48.6853, -1.3603],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_4581a0f5d8f60a98420928ba27e6d2b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ba063f1852b179f880b446e0dc92ab04 = $(`<div id="html_ba063f1852b179f880b446e0dc92ab04" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Avranches</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 48.6853<br>                 Lon: -1.3603             </div>             </div>`)[0];
+                popup_4581a0f5d8f60a98420928ba27e6d2b0.setContent(html_ba063f1852b179f880b446e0dc92ab04);
+            
+        
+
+        circle_marker_12ffc7d03c18cf6f630a95e9b18ad314.bindPopup(popup_4581a0f5d8f60a98420928ba27e6d2b0)
+        ;
+
+        
+    
+    
+            circle_marker_12ffc7d03c18cf6f630a95e9b18ad314.bindTooltip(
+                `<div>
+                     Avranches (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6208febee66e9a67c0f43d8ba88d08a9 = L.circleMarker(
+                [48.15, 0.3167],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_182c5197af508346ea868b6a47902950 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cf6914fd7211818afbca0f71dcee66a1 = $(`<div id="html_cf6914fd7211818afbca0f71dcee66a1" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Parigné l'Eveque</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 48.1500<br>                 Lon: 0.3167             </div>             </div>`)[0];
+                popup_182c5197af508346ea868b6a47902950.setContent(html_cf6914fd7211818afbca0f71dcee66a1);
+            
+        
+
+        circle_marker_6208febee66e9a67c0f43d8ba88d08a9.bindPopup(popup_182c5197af508346ea868b6a47902950)
+        ;
+
+        
+    
+    
+            circle_marker_6208febee66e9a67c0f43d8ba88d08a9.bindTooltip(
+                `<div>
+                     Parigné l'Eveque (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_712dc4dba465c9c3d33f5e3d749c8467 = L.circleMarker(
+                [47.8667, 1.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_73a0c5fbd53c5ea84f21367266e8c730 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a32ae09f328c5da9ba5d5ca6c1c3b973 = $(`<div id="html_a32ae09f328c5da9ba5d5ca6c1c3b973" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Olivet</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 47.8667<br>                 Lon: 1.9000             </div>             </div>`)[0];
+                popup_73a0c5fbd53c5ea84f21367266e8c730.setContent(html_a32ae09f328c5da9ba5d5ca6c1c3b973);
+            
+        
+
+        circle_marker_712dc4dba465c9c3d33f5e3d749c8467.bindPopup(popup_73a0c5fbd53c5ea84f21367266e8c730)
+        ;
+
+        
+    
+    
+            circle_marker_712dc4dba465c9c3d33f5e3d749c8467.bindTooltip(
+                `<div>
+                     Olivet (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_660c81c58259a56cae9838077e688325 = L.circleMarker(
+                [46.9511, 4.2994],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_bcef52df89febadb0c9b56a825e1eeb2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ceb86e26cfa5f8b4607f3864eea7facb = $(`<div id="html_ceb86e26cfa5f8b4607f3864eea7facb" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Autun</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 46.9511<br>                 Lon: 4.2994             </div>             </div>`)[0];
+                popup_bcef52df89febadb0c9b56a825e1eeb2.setContent(html_ceb86e26cfa5f8b4607f3864eea7facb);
+            
+        
+
+        circle_marker_660c81c58259a56cae9838077e688325.bindPopup(popup_bcef52df89febadb0c9b56a825e1eeb2)
+        ;
+
+        
+    
+    
+            circle_marker_660c81c58259a56cae9838077e688325.bindTooltip(
+                `<div>
+                     Autun (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86681b7b539e0f7267596304807ee5cd = L.circleMarker(
+                [44.555, -0.2481],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_2f9419b6c33c6df949d3a543ca639712 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1ba5b66107828937cecb768be3f2c59d = $(`<div id="html_1ba5b66107828937cecb768be3f2c59d" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Langon</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 44.5550<br>                 Lon: -0.2481             </div>             </div>`)[0];
+                popup_2f9419b6c33c6df949d3a543ca639712.setContent(html_1ba5b66107828937cecb768be3f2c59d);
+            
+        
+
+        circle_marker_86681b7b539e0f7267596304807ee5cd.bindPopup(popup_2f9419b6c33c6df949d3a543ca639712)
+        ;
+
+        
+    
+    
+            circle_marker_86681b7b539e0f7267596304807ee5cd.bindTooltip(
+                `<div>
+                     Langon (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7745d1322657c1004fb9e85f9ee2bb74 = L.circleMarker(
+                [47.0667, -1.2333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_11928d8963051818c3bb524e35c847bc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a01f3ba8fae651e0103d52c5cd283405 = $(`<div id="html_a01f3ba8fae651e0103d52c5cd283405" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Cugand</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 47.0667<br>                 Lon: -1.2333             </div>             </div>`)[0];
+                popup_11928d8963051818c3bb524e35c847bc.setContent(html_a01f3ba8fae651e0103d52c5cd283405);
+            
+        
+
+        circle_marker_7745d1322657c1004fb9e85f9ee2bb74.bindPopup(popup_11928d8963051818c3bb524e35c847bc)
+        ;
+
+        
+    
+    
+            circle_marker_7745d1322657c1004fb9e85f9ee2bb74.bindTooltip(
+                `<div>
+                     Cugand (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77e7b2b32aa9601502cc404b20a75ac0 = L.circleMarker(
+                [48.15, -1.6833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_159b8a85b1b02709ca309beb5b3dff1b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f6d7faa8a18152bd79d3cb7227fc105d = $(`<div id="html_f6d7faa8a18152bd79d3cb7227fc105d" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Saint Grégoire</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 48.1500<br>                 Lon: -1.6833             </div>             </div>`)[0];
+                popup_159b8a85b1b02709ca309beb5b3dff1b.setContent(html_f6d7faa8a18152bd79d3cb7227fc105d);
+            
+        
+
+        circle_marker_77e7b2b32aa9601502cc404b20a75ac0.bindPopup(popup_159b8a85b1b02709ca309beb5b3dff1b)
+        ;
+
+        
+    
+    
+            circle_marker_77e7b2b32aa9601502cc404b20a75ac0.bindTooltip(
+                `<div>
+                     Saint Grégoire (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32fc1ffd38ddcc84ee6c107f8e202171 = L.circleMarker(
+                [45.8833, 3.0833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_437e2388f3306d2c2ca5e556c3869546 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3db3426176076158902dffcb87c114d8 = $(`<div id="html_3db3426176076158902dffcb87c114d8" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Saint-Saturnin</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 45.8833<br>                 Lon: 3.0833             </div>             </div>`)[0];
+                popup_437e2388f3306d2c2ca5e556c3869546.setContent(html_3db3426176076158902dffcb87c114d8);
+            
+        
+
+        circle_marker_32fc1ffd38ddcc84ee6c107f8e202171.bindPopup(popup_437e2388f3306d2c2ca5e556c3869546)
+        ;
+
+        
+    
+    
+            circle_marker_32fc1ffd38ddcc84ee6c107f8e202171.bindTooltip(
+                `<div>
+                     Saint-Saturnin (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba9934397e1ef0aea2e77c07201e2d9b = L.circleMarker(
+                [48.8833, 2.4333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_1d880d7392cf5b7f7ce6dce0e7b419da = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b858e4a1bf16becbc8cc3af659b910bd = $(`<div id="html_b858e4a1bf16becbc8cc3af659b910bd" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Romainville</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 48.8833<br>                 Lon: 2.4333             </div>             </div>`)[0];
+                popup_1d880d7392cf5b7f7ce6dce0e7b419da.setContent(html_b858e4a1bf16becbc8cc3af659b910bd);
+            
+        
+
+        circle_marker_ba9934397e1ef0aea2e77c07201e2d9b.bindPopup(popup_1d880d7392cf5b7f7ce6dce0e7b419da)
+        ;
+
+        
+    
+    
+            circle_marker_ba9934397e1ef0aea2e77c07201e2d9b.bindTooltip(
+                `<div>
+                     Romainville (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_83136fcb418d9bf7843029b2ff0bc7b7 = L.circleMarker(
+                [46.67, -1.4261],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_795bfbf0ca95474ad5d55d920658bc5d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8fb7bbdabf94cd987a5d140d2ac9411b = $(`<div id="html_8fb7bbdabf94cd987a5d140d2ac9411b" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">La Roche s/Yon</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 46.6700<br>                 Lon: -1.4261             </div>             </div>`)[0];
+                popup_795bfbf0ca95474ad5d55d920658bc5d.setContent(html_8fb7bbdabf94cd987a5d140d2ac9411b);
+            
+        
+
+        circle_marker_83136fcb418d9bf7843029b2ff0bc7b7.bindPopup(popup_795bfbf0ca95474ad5d55d920658bc5d)
+        ;
+
+        
+    
+    
+            circle_marker_83136fcb418d9bf7843029b2ff0bc7b7.bindTooltip(
+                `<div>
+                     La Roche s/Yon (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53948ce432d5d9b2523b81e1668dce08 = L.circleMarker(
+                [43.71, -1.0536],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_2167cf49297400683fa219e0a3afad0e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fcb1914ff4e22e3ed200a22d551d55f8 = $(`<div id="html_fcb1914ff4e22e3ed200a22d551d55f8" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Dax</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 43.7100<br>                 Lon: -1.0536             </div>             </div>`)[0];
+                popup_2167cf49297400683fa219e0a3afad0e.setContent(html_fcb1914ff4e22e3ed200a22d551d55f8);
+            
+        
+
+        circle_marker_53948ce432d5d9b2523b81e1668dce08.bindPopup(popup_2167cf49297400683fa219e0a3afad0e)
+        ;
+
+        
+    
+    
+            circle_marker_53948ce432d5d9b2523b81e1668dce08.bindTooltip(
+                `<div>
+                     Dax (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75eb627dbf5ce61681991b02d8d511c6 = L.circleMarker(
+                [48.522, -2.7833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B4513", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_18403d15c774ac126f90ecb485e62591);
+        
+    
+        var popup_1300718a355640f045fc75b43b0b582c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f2bd7d529c16578a4f7315a403c6e4a7 = $(`<div id="html_f2bd7d529c16578a4f7315a403c6e4a7" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #8B4513; margin: 0;">Ploufragan</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Audio Video<br>                 <b>Coordonnées:</b><br>                 Lat: 48.5220<br>                 Lon: -2.7833             </div>             </div>`)[0];
+                popup_1300718a355640f045fc75b43b0b582c.setContent(html_f2bd7d529c16578a4f7315a403c6e4a7);
+            
+        
+
+        circle_marker_75eb627dbf5ce61681991b02d8d511c6.bindPopup(popup_1300718a355640f045fc75b43b0b582c)
+        ;
+
+        
+    
+    
+            circle_marker_75eb627dbf5ce61681991b02d8d511c6.bindTooltip(
+                `<div>
+                     Ploufragan (Audio Video)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_18403d15c774ac126f90ecb485e62591.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_913eae1df62159964583d93b35c1db3f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_9327f5e222665e8c6b2abfe66836e969 = L.circleMarker(
+                [43.5297, 5.4474],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_04f57b8a3f98de64a6b490b7390019a7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ace9d9ad59bbafcc7ddb11b79a05b7f7 = $(`<div id="html_ace9d9ad59bbafcc7ddb11b79a05b7f7" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Aix-en-Provence</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 43.5297<br>                 Lon: 5.4474             </div>             </div>`)[0];
+                popup_04f57b8a3f98de64a6b490b7390019a7.setContent(html_ace9d9ad59bbafcc7ddb11b79a05b7f7);
+            
+        
+
+        circle_marker_9327f5e222665e8c6b2abfe66836e969.bindPopup(popup_04f57b8a3f98de64a6b490b7390019a7)
+        ;
+
+        
+    
+    
+            circle_marker_9327f5e222665e8c6b2abfe66836e969.bindTooltip(
+                `<div>
+                     Aix-en-Provence (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31a12e47796283d9f94171a733185fd9 = L.circleMarker(
+                [45.7744, 4.7772],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_a9ba33dc2f6bf83704775fd23e28abdf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8d940b8a3035a29f8bc0523a0b8b1b64 = $(`<div id="html_8d940b8a3035a29f8bc0523a0b8b1b64" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Ecully</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 45.7744<br>                 Lon: 4.7772             </div>             </div>`)[0];
+                popup_a9ba33dc2f6bf83704775fd23e28abdf.setContent(html_8d940b8a3035a29f8bc0523a0b8b1b64);
+            
+        
+
+        circle_marker_31a12e47796283d9f94171a733185fd9.bindPopup(popup_a9ba33dc2f6bf83704775fd23e28abdf)
+        ;
+
+        
+    
+    
+            circle_marker_31a12e47796283d9f94171a733185fd9.bindTooltip(
+                `<div>
+                     Ecully (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a97ce79e911d85ee2b62284bff95e77 = L.circleMarker(
+                [49.3583, 6.1689],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_f114032d3139c9fbd677712d40e69305 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ad20c3eee79ba999e0574d5f6ada026b = $(`<div id="html_ad20c3eee79ba999e0574d5f6ada026b" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Thionville</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 49.3583<br>                 Lon: 6.1689             </div>             </div>`)[0];
+                popup_f114032d3139c9fbd677712d40e69305.setContent(html_ad20c3eee79ba999e0574d5f6ada026b);
+            
+        
+
+        circle_marker_6a97ce79e911d85ee2b62284bff95e77.bindPopup(popup_f114032d3139c9fbd677712d40e69305)
+        ;
+
+        
+    
+    
+            circle_marker_6a97ce79e911d85ee2b62284bff95e77.bindTooltip(
+                `<div>
+                     Thionville (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_339865a8d42636273d97e31c67d7934e = L.circleMarker(
+                [48.8167, 6.5],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_9d9b9b2c50c668a2b28f4b78c0ddf5cd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ed107f8c733cd833aa16b1aa80c16987 = $(`<div id="html_ed107f8c733cd833aa16b1aa80c16987" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Chateau Salins</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 48.8167<br>                 Lon: 6.5000             </div>             </div>`)[0];
+                popup_9d9b9b2c50c668a2b28f4b78c0ddf5cd.setContent(html_ed107f8c733cd833aa16b1aa80c16987);
+            
+        
+
+        circle_marker_339865a8d42636273d97e31c67d7934e.bindPopup(popup_9d9b9b2c50c668a2b28f4b78c0ddf5cd)
+        ;
+
+        
+    
+    
+            circle_marker_339865a8d42636273d97e31c67d7934e.bindTooltip(
+                `<div>
+                     Chateau Salins (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09e26fa33334c550bc250d72b46c55cf = L.circleMarker(
+                [43.2965, 5.3698],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_59ea9d681123fa2c2b8c4c7492463029 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ee74026653484c401e3f3a25a6b7ed79 = $(`<div id="html_ee74026653484c401e3f3a25a6b7ed79" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Marseille</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 43.2965<br>                 Lon: 5.3698             </div>             </div>`)[0];
+                popup_59ea9d681123fa2c2b8c4c7492463029.setContent(html_ee74026653484c401e3f3a25a6b7ed79);
+            
+        
+
+        circle_marker_09e26fa33334c550bc250d72b46c55cf.bindPopup(popup_59ea9d681123fa2c2b8c4c7492463029)
+        ;
+
+        
+    
+    
+            circle_marker_09e26fa33334c550bc250d72b46c55cf.bindTooltip(
+                `<div>
+                     Marseille (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a27ac59f6bb813bc4dbd6fd53f59579 = L.circleMarker(
+                [45.7, 0.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_c80a9170d6dfb07eac06a9db8ba2e4f6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0315d005b01db8244cc289b759071cec = $(`<div id="html_0315d005b01db8244cc289b759071cec" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">St Junien</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 45.7000<br>                 Lon: 0.9000             </div>             </div>`)[0];
+                popup_c80a9170d6dfb07eac06a9db8ba2e4f6.setContent(html_0315d005b01db8244cc289b759071cec);
+            
+        
+
+        circle_marker_6a27ac59f6bb813bc4dbd6fd53f59579.bindPopup(popup_c80a9170d6dfb07eac06a9db8ba2e4f6)
+        ;
+
+        
+    
+    
+            circle_marker_6a27ac59f6bb813bc4dbd6fd53f59579.bindTooltip(
+                `<div>
+                     St Junien (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5c1023e0ea7113b40634c8d087e34ed = L.circleMarker(
+                [49.1, 6.7],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_b7d52599148199bf7573819951b49054 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b42df672e939ca89793e5ac1ebde0a5 = $(`<div id="html_8b42df672e939ca89793e5ac1ebde0a5" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Saint Avold</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 49.1000<br>                 Lon: 6.7000             </div>             </div>`)[0];
+                popup_b7d52599148199bf7573819951b49054.setContent(html_8b42df672e939ca89793e5ac1ebde0a5);
+            
+        
+
+        circle_marker_f5c1023e0ea7113b40634c8d087e34ed.bindPopup(popup_b7d52599148199bf7573819951b49054)
+        ;
+
+        
+    
+    
+            circle_marker_f5c1023e0ea7113b40634c8d087e34ed.bindTooltip(
+                `<div>
+                     Saint Avold (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f6c62b202ecbdf1238435f85f24c1da = L.circleMarker(
+                [43.7102, 7.262],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_b7ebc1fed4d1091c22aae956a4e82be5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c85b3d164db37c588f013b232feea710 = $(`<div id="html_c85b3d164db37c588f013b232feea710" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Nice</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 43.7102<br>                 Lon: 7.2620             </div>             </div>`)[0];
+                popup_b7ebc1fed4d1091c22aae956a4e82be5.setContent(html_c85b3d164db37c588f013b232feea710);
+            
+        
+
+        circle_marker_6f6c62b202ecbdf1238435f85f24c1da.bindPopup(popup_b7ebc1fed4d1091c22aae956a4e82be5)
+        ;
+
+        
+    
+    
+            circle_marker_6f6c62b202ecbdf1238435f85f24c1da.bindTooltip(
+                `<div>
+                     Nice (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ecd17401274856bafc746e7b8cb0235 = L.circleMarker(
+                [45.6486, 0.1562],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_1fc23ca4b0ec67748f544f8b10371415 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_14800efc60de6279d266ce74d9061b7d = $(`<div id="html_14800efc60de6279d266ce74d9061b7d" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Angoulème</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 45.6486<br>                 Lon: 0.1562             </div>             </div>`)[0];
+                popup_1fc23ca4b0ec67748f544f8b10371415.setContent(html_14800efc60de6279d266ce74d9061b7d);
+            
+        
+
+        circle_marker_2ecd17401274856bafc746e7b8cb0235.bindPopup(popup_1fc23ca4b0ec67748f544f8b10371415)
+        ;
+
+        
+    
+    
+            circle_marker_2ecd17401274856bafc746e7b8cb0235.bindTooltip(
+                `<div>
+                     Angoulème (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78bc5565ca6093fdee23adcb3a544472 = L.circleMarker(
+                [43.7227, 5.5641],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_913eae1df62159964583d93b35c1db3f);
+        
+    
+        var popup_0a054611edce720683f1025beae50e2a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d54753451d332ea5fa6a12618788b5a5 = $(`<div id="html_d54753451d332ea5fa6a12618788b5a5" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FFD700; margin: 0;">Pertuis</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hoppen<br>                 <b>Coordonnées:</b><br>                 Lat: 43.7227<br>                 Lon: 5.5641             </div>             </div>`)[0];
+                popup_0a054611edce720683f1025beae50e2a.setContent(html_d54753451d332ea5fa6a12618788b5a5);
+            
+        
+
+        circle_marker_78bc5565ca6093fdee23adcb3a544472.bindPopup(popup_0a054611edce720683f1025beae50e2a)
+        ;
+
+        
+    
+    
+            circle_marker_78bc5565ca6093fdee23adcb3a544472.bindTooltip(
+                `<div>
+                     Pertuis (Hoppen)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_913eae1df62159964583d93b35c1db3f.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_f87ffede2f93ab2be70d16d597da7f42 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_7471d026fa37d71a36d34ce177e80cf4 = L.circleMarker(
+                [42.7028, 9.4503],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_f1def67db1a4d4ee812227601b0b2797 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ad65140534898ca8435e34a7e3be76f3 = $(`<div id="html_ad65140534898ca8435e34a7e3be76f3" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Bastia</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 42.7028<br>                 Lon: 9.4503             </div>             </div>`)[0];
+                popup_f1def67db1a4d4ee812227601b0b2797.setContent(html_ad65140534898ca8435e34a7e3be76f3);
+            
+        
+
+        circle_marker_7471d026fa37d71a36d34ce177e80cf4.bindPopup(popup_f1def67db1a4d4ee812227601b0b2797)
+        ;
+
+        
+    
+    
+            circle_marker_7471d026fa37d71a36d34ce177e80cf4.bindTooltip(
+                `<div>
+                     Bastia (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6dbe2e9c7b91ef8fdff4f4a8f0bf3c21 = L.circleMarker(
+                [48.8792, 2.1934],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_c4ee40c077ed3a423d2854f4f187fb30 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b7630afd92aaf602a1a85b6566b3e566 = $(`<div id="html_b7630afd92aaf602a1a85b6566b3e566" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Rueil Malmaison</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 48.8792<br>                 Lon: 2.1934             </div>             </div>`)[0];
+                popup_c4ee40c077ed3a423d2854f4f187fb30.setContent(html_b7630afd92aaf602a1a85b6566b3e566);
+            
+        
+
+        circle_marker_6dbe2e9c7b91ef8fdff4f4a8f0bf3c21.bindPopup(popup_c4ee40c077ed3a423d2854f4f187fb30)
+        ;
+
+        
+    
+    
+            circle_marker_6dbe2e9c7b91ef8fdff4f4a8f0bf3c21.bindTooltip(
+                `<div>
+                     Rueil Malmaison (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f1d588fa67b28de43517009b0a68761 = L.circleMarker(
+                [43.9333, 3.7167],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_4aa8852fa16d7b91c4961b7647c43a01 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_730f82fbbcbf5d06e2fcf1966b838721 = $(`<div id="html_730f82fbbcbf5d06e2fcf1966b838721" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Ganges</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 43.9333<br>                 Lon: 3.7167             </div>             </div>`)[0];
+                popup_4aa8852fa16d7b91c4961b7647c43a01.setContent(html_730f82fbbcbf5d06e2fcf1966b838721);
+            
+        
+
+        circle_marker_6f1d588fa67b28de43517009b0a68761.bindPopup(popup_4aa8852fa16d7b91c4961b7647c43a01)
+        ;
+
+        
+    
+    
+            circle_marker_6f1d588fa67b28de43517009b0a68761.bindTooltip(
+                `<div>
+                     Ganges (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9726927d1c4046f6f25d42d21671285 = L.circleMarker(
+                [48.8566, 2.3522],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_93f6ece817b697094ff507b9f365289e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5834d9862ed30b8f14f9a2ff5f193f2c = $(`<div id="html_5834d9862ed30b8f14f9a2ff5f193f2c" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Paris</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 48.8566<br>                 Lon: 2.3522             </div>             </div>`)[0];
+                popup_93f6ece817b697094ff507b9f365289e.setContent(html_5834d9862ed30b8f14f9a2ff5f193f2c);
+            
+        
+
+        circle_marker_e9726927d1c4046f6f25d42d21671285.bindPopup(popup_93f6ece817b697094ff507b9f365289e)
+        ;
+
+        
+    
+    
+            circle_marker_e9726927d1c4046f6f25d42d21671285.bindTooltip(
+                `<div>
+                     Paris (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c18a523f32c9f8df30eeb407b2199cf5 = L.circleMarker(
+                [48.871, 2.4201],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_4ff76a220ea56112b1b698ba1b33a8ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1ebf16a3417ec88df5076968f0405aee = $(`<div id="html_1ebf16a3417ec88df5076968f0405aee" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Bagnolet</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 48.8710<br>                 Lon: 2.4201             </div>             </div>`)[0];
+                popup_4ff76a220ea56112b1b698ba1b33a8ed.setContent(html_1ebf16a3417ec88df5076968f0405aee);
+            
+        
+
+        circle_marker_c18a523f32c9f8df30eeb407b2199cf5.bindPopup(popup_4ff76a220ea56112b1b698ba1b33a8ed)
+        ;
+
+        
+    
+    
+            circle_marker_c18a523f32c9f8df30eeb407b2199cf5.bindTooltip(
+                `<div>
+                     Bagnolet (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d724d3815eaf8cd0ea39c352eae706f9 = L.circleMarker(
+                [48.6263, 2.4385],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_f47fcab16a65940a0a2c3fca2ee1c339 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6d72a7e6a43e88d0e4ec7bbed8e51a02 = $(`<div id="html_6d72a7e6a43e88d0e4ec7bbed8e51a02" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Evry</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 48.6263<br>                 Lon: 2.4385             </div>             </div>`)[0];
+                popup_f47fcab16a65940a0a2c3fca2ee1c339.setContent(html_6d72a7e6a43e88d0e4ec7bbed8e51a02);
+            
+        
+
+        circle_marker_d724d3815eaf8cd0ea39c352eae706f9.bindPopup(popup_f47fcab16a65940a0a2c3fca2ee1c339)
+        ;
+
+        
+    
+    
+            circle_marker_d724d3815eaf8cd0ea39c352eae706f9.bindTooltip(
+                `<div>
+                     Evry (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_299bb09265cd3cd513963a8db18706c5 = L.circleMarker(
+                [43.2861, 3.1144],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_1cb6a52f42de40131d74a37eac52e979 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c008e5b124a654a7d597d68c1b1f3e86 = $(`<div id="html_c008e5b124a654a7d597d68c1b1f3e86" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Boujan-sur-Libron</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 43.2861<br>                 Lon: 3.1144             </div>             </div>`)[0];
+                popup_1cb6a52f42de40131d74a37eac52e979.setContent(html_c008e5b124a654a7d597d68c1b1f3e86);
+            
+        
+
+        circle_marker_299bb09265cd3cd513963a8db18706c5.bindPopup(popup_1cb6a52f42de40131d74a37eac52e979)
+        ;
+
+        
+    
+    
+            circle_marker_299bb09265cd3cd513963a8db18706c5.bindTooltip(
+                `<div>
+                     Boujan-sur-Libron (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_391ba8c36e5b725080eeb4045e4e0d62 = L.circleMarker(
+                [48.8315, 2.3322],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_4303e9bb150161039551b1108acb528c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1aa16708d206e4c7b7573e095d6af9fd = $(`<div id="html_1aa16708d206e4c7b7573e095d6af9fd" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Paris 14</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 48.8315<br>                 Lon: 2.3322             </div>             </div>`)[0];
+                popup_4303e9bb150161039551b1108acb528c.setContent(html_1aa16708d206e4c7b7573e095d6af9fd);
+            
+        
+
+        circle_marker_391ba8c36e5b725080eeb4045e4e0d62.bindPopup(popup_4303e9bb150161039551b1108acb528c)
+        ;
+
+        
+    
+    
+            circle_marker_391ba8c36e5b725080eeb4045e4e0d62.bindTooltip(
+                `<div>
+                     Paris 14 (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca416fd6b448f56a45833b334ac0d459 = L.circleMarker(
+                [47.7486, -3.364],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f87ffede2f93ab2be70d16d597da7f42);
+        
+    
+        var popup_971718afee92501ee6d0947bad163f24 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b34f4c8e8c5504b0aab7fb2391d2a3d2 = $(`<div id="html_b34f4c8e8c5504b0aab7fb2391d2a3d2" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #000000; margin: 0;">Lorient</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Hotel Care<br>                 <b>Coordonnées:</b><br>                 Lat: 47.7486<br>                 Lon: -3.3640             </div>             </div>`)[0];
+                popup_971718afee92501ee6d0947bad163f24.setContent(html_b34f4c8e8c5504b0aab7fb2391d2a3d2);
+            
+        
+
+        circle_marker_ca416fd6b448f56a45833b334ac0d459.bindPopup(popup_971718afee92501ee6d0947bad163f24)
+        ;
+
+        
+    
+    
+            circle_marker_ca416fd6b448f56a45833b334ac0d459.bindTooltip(
+                `<div>
+                     Lorient (Hotel Care)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_f87ffede2f93ab2be70d16d597da7f42.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_d4612748447dfbc2497ec223b8fbfb71 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_07173276e4ec7a7c5f8f075ee0c5d244 = L.circleMarker(
+                [44.0944, 6.2361],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#A9A9A9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d4612748447dfbc2497ec223b8fbfb71);
+        
+    
+        var popup_b2731593b1731fa5fd4acc98a93620ae = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5e1ad494c815a4b6fea10c603e0b4f80 = $(`<div id="html_5e1ad494c815a4b6fea10c603e0b4f80" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #A9A9A9; margin: 0;">Digne</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Humelab Hospitality<br>                 <b>Coordonnées:</b><br>                 Lat: 44.0944<br>                 Lon: 6.2361             </div>             </div>`)[0];
+                popup_b2731593b1731fa5fd4acc98a93620ae.setContent(html_5e1ad494c815a4b6fea10c603e0b4f80);
+            
+        
+
+        circle_marker_07173276e4ec7a7c5f8f075ee0c5d244.bindPopup(popup_b2731593b1731fa5fd4acc98a93620ae)
+        ;
+
+        
+    
+    
+            circle_marker_07173276e4ec7a7c5f8f075ee0c5d244.bindTooltip(
+                `<div>
+                     Digne (Humelab Hospitality)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_d4612748447dfbc2497ec223b8fbfb71.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_84dfcdba1989b846f6d294e74542c97d = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_6604faf763dc7a70bc56bd8fafa432e4 = L.circleMarker(
+                [42.9667, 1.6],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF1493", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_84dfcdba1989b846f6d294e74542c97d);
+        
+    
+        var popup_0b7b34214404cfab122b8b4f233c36f4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6294fc74dd2eb9460a0b3f82f0fb2fce = $(`<div id="html_6294fc74dd2eb9460a0b3f82f0fb2fce" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FF1493; margin: 0;">Foix</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> LTH<br>                 <b>Coordonnées:</b><br>                 Lat: 42.9667<br>                 Lon: 1.6000             </div>             </div>`)[0];
+                popup_0b7b34214404cfab122b8b4f233c36f4.setContent(html_6294fc74dd2eb9460a0b3f82f0fb2fce);
+            
+        
+
+        circle_marker_6604faf763dc7a70bc56bd8fafa432e4.bindPopup(popup_0b7b34214404cfab122b8b4f233c36f4)
+        ;
+
+        
+    
+    
+            circle_marker_6604faf763dc7a70bc56bd8fafa432e4.bindTooltip(
+                `<div>
+                     Foix (LTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aeef4d08e354f8a4f9f8368800084565 = L.circleMarker(
+                [43.4031, 3.6947],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF1493", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_84dfcdba1989b846f6d294e74542c97d);
+        
+    
+        var popup_1804312b5c2950fba3b268cf5ec6a175 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6e6532b7ab6cd3a5fec52ecfe6d6053e = $(`<div id="html_6e6532b7ab6cd3a5fec52ecfe6d6053e" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FF1493; margin: 0;">Sete</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> LTH<br>                 <b>Coordonnées:</b><br>                 Lat: 43.4031<br>                 Lon: 3.6947             </div>             </div>`)[0];
+                popup_1804312b5c2950fba3b268cf5ec6a175.setContent(html_6e6532b7ab6cd3a5fec52ecfe6d6053e);
+            
+        
+
+        circle_marker_aeef4d08e354f8a4f9f8368800084565.bindPopup(popup_1804312b5c2950fba3b268cf5ec6a175)
+        ;
+
+        
+    
+    
+            circle_marker_aeef4d08e354f8a4f9f8368800084565.bindTooltip(
+                `<div>
+                     Sete (LTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57ef9c55330c819e0c79d9df20775ac1 = L.circleMarker(
+                [43.1067, 0.7258],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF1493", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_84dfcdba1989b846f6d294e74542c97d);
+        
+    
+        var popup_9e4c3be256f24aa25bbfe9acb6fd83fa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7235dcc9d1f839091ac56c5ab301689d = $(`<div id="html_7235dcc9d1f839091ac56c5ab301689d" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FF1493; margin: 0;">Saint-Gaudens</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> LTH<br>                 <b>Coordonnées:</b><br>                 Lat: 43.1067<br>                 Lon: 0.7258             </div>             </div>`)[0];
+                popup_9e4c3be256f24aa25bbfe9acb6fd83fa.setContent(html_7235dcc9d1f839091ac56c5ab301689d);
+            
+        
+
+        circle_marker_57ef9c55330c819e0c79d9df20775ac1.bindPopup(popup_9e4c3be256f24aa25bbfe9acb6fd83fa)
+        ;
+
+        
+    
+    
+            circle_marker_57ef9c55330c819e0c79d9df20775ac1.bindTooltip(
+                `<div>
+                     Saint-Gaudens (LTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5640c2b821954917a8ebbb04cf77a26f = L.circleMarker(
+                [43.8906, -0.4969],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF1493", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_84dfcdba1989b846f6d294e74542c97d);
+        
+    
+        var popup_fbd0937019a259014339347d07885502 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bfdf997e7be35fc7823958ffa538abbd = $(`<div id="html_bfdf997e7be35fc7823958ffa538abbd" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FF1493; margin: 0;">Mont-de-Marsan</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> LTH<br>                 <b>Coordonnées:</b><br>                 Lat: 43.8906<br>                 Lon: -0.4969             </div>             </div>`)[0];
+                popup_fbd0937019a259014339347d07885502.setContent(html_bfdf997e7be35fc7823958ffa538abbd);
+            
+        
+
+        circle_marker_5640c2b821954917a8ebbb04cf77a26f.bindPopup(popup_fbd0937019a259014339347d07885502)
+        ;
+
+        
+    
+    
+            circle_marker_5640c2b821954917a8ebbb04cf77a26f.bindTooltip(
+                `<div>
+                     Mont-de-Marsan (LTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34596d4e5bcfdeffba78d2b6eb8aed8d = L.circleMarker(
+                [43.1067, 0.7258],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF1493", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_84dfcdba1989b846f6d294e74542c97d);
+        
+    
+        var popup_286d2c97c7dd53b24ba64a360436cdaf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5157038c9b3557fef3d621ba68022b91 = $(`<div id="html_5157038c9b3557fef3d621ba68022b91" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #FF1493; margin: 0;">Stgaudens</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> LTH<br>                 <b>Coordonnées:</b><br>                 Lat: 43.1067<br>                 Lon: 0.7258             </div>             </div>`)[0];
+                popup_286d2c97c7dd53b24ba64a360436cdaf.setContent(html_5157038c9b3557fef3d621ba68022b91);
+            
+        
+
+        circle_marker_34596d4e5bcfdeffba78d2b6eb8aed8d.bindPopup(popup_286d2c97c7dd53b24ba64a360436cdaf)
+        ;
+
+        
+    
+    
+            circle_marker_34596d4e5bcfdeffba78d2b6eb8aed8d.bindTooltip(
+                `<div>
+                     Stgaudens (LTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_84dfcdba1989b846f6d294e74542c97d.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_2ae6b5c63790d3d276e5cf3a6343f0a4 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_ef13e6cb7e2de01dec5d829b2960e9bd = L.circleMarker(
+                [46.0667, 5.6],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#40E0D0", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_2ae6b5c63790d3d276e5cf3a6343f0a4);
+        
+    
+        var popup_0638490e36f2bc808a2cd482dadd7620 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b12ad0dbe9e7184348136620de9436af = $(`<div id="html_b12ad0dbe9e7184348136620de9436af" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #40E0D0; margin: 0;">Hauteville</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Siecom<br>                 <b>Coordonnées:</b><br>                 Lat: 46.0667<br>                 Lon: 5.6000             </div>             </div>`)[0];
+                popup_0638490e36f2bc808a2cd482dadd7620.setContent(html_b12ad0dbe9e7184348136620de9436af);
+            
+        
+
+        circle_marker_ef13e6cb7e2de01dec5d829b2960e9bd.bindPopup(popup_0638490e36f2bc808a2cd482dadd7620)
+        ;
+
+        
+    
+    
+            circle_marker_ef13e6cb7e2de01dec5d829b2960e9bd.bindTooltip(
+                `<div>
+                     Hauteville (Siecom)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_adf9a8192336433ceea4881a479f0fc0 = L.circleMarker(
+                [45.1333, 5.8167],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#40E0D0", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_2ae6b5c63790d3d276e5cf3a6343f0a4);
+        
+    
+        var popup_beb5d80b8eae4b14347448350937f332 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9c0f9e7cddd69b32307a4b4d1f24f8ca = $(`<div id="html_9c0f9e7cddd69b32307a4b4d1f24f8ca" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #40E0D0; margin: 0;">St Martin D'Uriage</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Siecom<br>                 <b>Coordonnées:</b><br>                 Lat: 45.1333<br>                 Lon: 5.8167             </div>             </div>`)[0];
+                popup_beb5d80b8eae4b14347448350937f332.setContent(html_9c0f9e7cddd69b32307a4b4d1f24f8ca);
+            
+        
+
+        circle_marker_adf9a8192336433ceea4881a479f0fc0.bindPopup(popup_beb5d80b8eae4b14347448350937f332)
+        ;
+
+        
+    
+    
+            circle_marker_adf9a8192336433ceea4881a479f0fc0.bindTooltip(
+                `<div>
+                     St Martin D'Uriage (Siecom)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22ad158cfb2c9a895401e6ad4b76fcab = L.circleMarker(
+                [45.5667, 5.3833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#40E0D0", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_2ae6b5c63790d3d276e5cf3a6343f0a4);
+        
+    
+        var popup_0cf475cc93184108f0f4137b9a38bacc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e04aafda66585d2e8aa4890768c01bf8 = $(`<div id="html_e04aafda66585d2e8aa4890768c01bf8" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #40E0D0; margin: 0;">Bourgoin Jallieu</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> Siecom<br>                 <b>Coordonnées:</b><br>                 Lat: 45.5667<br>                 Lon: 5.3833             </div>             </div>`)[0];
+                popup_0cf475cc93184108f0f4137b9a38bacc.setContent(html_e04aafda66585d2e8aa4890768c01bf8);
+            
+        
+
+        circle_marker_22ad158cfb2c9a895401e6ad4b76fcab.bindPopup(popup_0cf475cc93184108f0f4137b9a38bacc)
+        ;
+
+        
+    
+    
+            circle_marker_22ad158cfb2c9a895401e6ad4b76fcab.bindTooltip(
+                `<div>
+                     Bourgoin Jallieu (Siecom)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_2ae6b5c63790d3d276e5cf3a6343f0a4.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_f1b4319af5ac8f55f16422813a74f70d = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_15f68839f8a4e5716f400ec3160ecb26 = L.circleMarker(
+                [46.1533, 4.59],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00FFFF", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f1b4319af5ac8f55f16422813a74f70d);
+        
+    
+        var popup_bbc1b70ab943fbb7f56ef7e8f5b058ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2b16787f319216b01c66ffc5dcfe394b = $(`<div id="html_2b16787f319216b01c66ffc5dcfe394b" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #00FFFF; margin: 0;">Beaujeu</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> TV Beaujolaise<br>                 <b>Coordonnées:</b><br>                 Lat: 46.1533<br>                 Lon: 4.5900             </div>             </div>`)[0];
+                popup_bbc1b70ab943fbb7f56ef7e8f5b058ed.setContent(html_2b16787f319216b01c66ffc5dcfe394b);
+            
+        
+
+        circle_marker_15f68839f8a4e5716f400ec3160ecb26.bindPopup(popup_bbc1b70ab943fbb7f56ef7e8f5b058ed)
+        ;
+
+        
+    
+    
+            circle_marker_15f68839f8a4e5716f400ec3160ecb26.bindTooltip(
+                `<div>
+                     Beaujeu (TV Beaujolaise)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_f1b4319af5ac8f55f16422813a74f70d.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var feature_group_c60b291acce8d45b335e55ac2252f1cb = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_b95f730c337b7457dc1f8f5d9d07f745 = L.circleMarker(
+                [43.4047, 5.0517],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#DAA520", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(feature_group_c60b291acce8d45b335e55ac2252f1cb);
+        
+    
+        var popup_5abf73e677745bbd9bc9ed607115e66c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cf55bd7ede136eb8c45991bc3dd08e64 = $(`<div id="html_cf55bd7ede136eb8c45991bc3dd08e64" style="width: 100.0%; height: 100.0%;">             <div style="width: 200px;">                 <h4 style="color: #DAA520; margin: 0;">Martigues</h4>                 <hr style="margin: 5px 0;">                 <b>Entreprise:</b> VMP<br>                 <b>Coordonnées:</b><br>                 Lat: 43.4047<br>                 Lon: 5.0517             </div>             </div>`)[0];
+                popup_5abf73e677745bbd9bc9ed607115e66c.setContent(html_cf55bd7ede136eb8c45991bc3dd08e64);
+            
+        
+
+        circle_marker_b95f730c337b7457dc1f8f5d9d07f745.bindPopup(popup_5abf73e677745bbd9bc9ed607115e66c)
+        ;
+
+        
+    
+    
+            circle_marker_b95f730c337b7457dc1f8f5d9d07f745.bindTooltip(
+                `<div>
+                     Martigues (VMP)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_c60b291acce8d45b335e55ac2252f1cb.addTo(map_b37d17deb2234c6f52406de76cb95498);
+        
+    
+            var layer_control_1ee4149df08fef6d6a1ccf147f051967_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_fd9bcb4a5517a8b32b9e0a00b6cdc23b,
+                },
+                overlays :  {
+                    "ACTIV\u0027PROTECT (1 villes)" : feature_group_efc02cd275b41d9585523197e33aac1a,
+                    "ADC (3 villes)" : feature_group_bad9da81c5e25607c654d39e698d2a2b,
+                    "AGSCOM (3 villes)" : feature_group_5849ce18bffb8f62bac6bb398f4b6ed5,
+                    "Alliance tech (1 villes)" : feature_group_a583019859fb67e1df29e9ae6d7ddd05,
+                    "ATEA-IT (1 villes)" : feature_group_0b47ad32d2ae63917b451161483b82c9,
+                    "Audio Video (15 villes)" : feature_group_18403d15c774ac126f90ecb485e62591,
+                    "Hoppen (10 villes)" : feature_group_913eae1df62159964583d93b35c1db3f,
+                    "Hotel Care (9 villes)" : feature_group_f87ffede2f93ab2be70d16d597da7f42,
+                    "Humelab Hospitality (1 villes)" : feature_group_d4612748447dfbc2497ec223b8fbfb71,
+                    "LTH (5 villes)" : feature_group_84dfcdba1989b846f6d294e74542c97d,
+                    "Siecom (3 villes)" : feature_group_2ae6b5c63790d3d276e5cf3a6343f0a4,
+                    "TV Beaujolaise (1 villes)" : feature_group_f1b4319af5ac8f55f16422813a74f70d,
+                    "VMP (1 villes)" : feature_group_c60b291acce8d45b335e55ac2252f1cb,
+                },
+            };
+            let layer_control_1ee4149df08fef6d6a1ccf147f051967 = L.control.layers(
+                layer_control_1ee4149df08fef6d6a1ccf147f051967_layers.base_layers,
+                layer_control_1ee4149df08fef6d6a1ccf147f051967_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_b37d17deb2234c6f52406de76cb95498);
+
+        
+</script>
+</html>
